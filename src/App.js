@@ -10,6 +10,7 @@ import NotificationDetails from './pages/notification-details/notification-detai
 import History from './pages/history/history.component';
 import Settings from './pages/settings/settings.component';
 import Login from './pages/login/login.component';
+import Introduction from './pages/introduction/introduction';
 import $ from 'jquery'
 
 
@@ -17,7 +18,8 @@ function App() {
  
   return (
     <Routes>
-      <Route path='/' element={<SignUp />} />
+      <Route path='/' element={<Introduction />} />
+      <Route path='/sign-up' element={<SignUp />} />
       <Route path='/index/:id' element={<IndexPage />} />
       <Route path='/wallet' element={<Wallet />} />
       <Route path='/profile' element={<Profile />} />

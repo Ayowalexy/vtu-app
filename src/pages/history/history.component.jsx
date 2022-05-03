@@ -75,7 +75,9 @@ class History extends React.Component {
         </div>
         
         <SideBar />
+        <div >
         <a class="closesidemenu" onClick={this.handleClose}><i class="material-icons icons-raised bg-dark ">close</i></a>
+        </div>
         <div class="wrapper homepage">
             <div class="header">
                 <div class="row no-gutters">

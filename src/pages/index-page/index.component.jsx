@@ -29,6 +29,7 @@ class IndexPage extends React.Component {
                 text: '',
             },
             currentUser: "" ,
+            count: 1
         }
     }
 
@@ -38,8 +39,9 @@ class IndexPage extends React.Component {
                 message: {
                     header: "Login Successful",
                     text: "All your transactions in one place",  
-                }                
+                }, count: 2
             })
+           
              $('.loader-screen').fadeOut('slow');
             HandleNotification()
         }
@@ -329,7 +331,7 @@ class IndexPage extends React.Component {
 
         <Footer />
         {
-            !this.state.renderOnce && (
+            !this.state.count === 1 && (
                 <NotificationModal 
                 active={this.state.active} 
                 message={this.state.message} />

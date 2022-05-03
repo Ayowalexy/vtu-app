@@ -344,7 +344,7 @@ body.sidemenu-open .sidebar {
 }
 
 body.sidemenu-open .closesidemenu {
-    bottom: 20px;
+    bottom: 250px;
     opacity: 1;
 }
 

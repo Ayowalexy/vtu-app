@@ -1,14 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-const Footer = () => (
+const Footer = ({props}) => {
+    const user = useSelector(state => state.user)
+    return(
     
     <div class="footer">
     <div class="no-gutters">
         <div class="col-auto mx-auto">
             <div class="row no-gutters justify-content-center">
                 <div class="col-auto">
-                <Link to='/index' class="btn btn-link-default active">
+                <Link to={`/index/${user.currentUser.token}`} class="btn btn-link-default active">
                     <i class="material-icons">home</i>
                     </Link>
                     
@@ -32,5 +35,5 @@ const Footer = () => (
     </div>
 </div>
 )
-
+}
 export default Footer
