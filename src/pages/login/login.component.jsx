@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import { login, signUp } from '../../services/network'
+import { getuserProfile, login, signUp } from '../../services/network'
 import $ from 'jquery'
 import withRouter from '../../components/withRouter/withRouter'
 import NotificationModal from '../../components/notification/notification'
 import { HandleNotification } from '../../utils/utils'
+import { setCurrentUser } from '../../redux/actions/user.actions'
 
 
 class Login extends React.Component {
@@ -42,8 +43,12 @@ class Login extends React.Component {
         })
         try {
             const res = await login(data)
-            // console.log("res", res)
             if(res.data.flag === 1){
+                const profile = await getuserProfile({
+                    id: res.data.token
+                })
+
+                this.props.dispatch(setCurrentUser(profile.data.customer))
                 this.props.navigate(`/index/${res?.data?.token}`)
             } else {
                 this.setState({

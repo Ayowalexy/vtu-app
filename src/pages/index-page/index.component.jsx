@@ -33,10 +33,6 @@ class IndexPage extends React.Component {
     }
 
     fetchIndexData = async () => {
-        console.log(this.props.params)
-        const res = await getuserProfile(this.props.params)
-        console.log(res)
-        this.props.dispatch(setCurrentUser(res.data.customer))
         if(this.state.active){
             this.setState({
                 message: {
@@ -44,7 +40,6 @@ class IndexPage extends React.Component {
                     text: "All your transactions in one place",  
                 }                
             })
-           
              $('.loader-screen').fadeOut('slow');
             HandleNotification()
         }
@@ -89,6 +84,7 @@ class IndexPage extends React.Component {
                 <SideBar />
                 <a class="closesidemenu" onClick={this.handleClose}><i class="material-icons icons-raised bg-dark ">close</i></a>
 
+               { (
                 <div class="wrapper homepage">
                    
                     <div class="header">
@@ -340,7 +336,8 @@ class IndexPage extends React.Component {
             )
         }
     
-      </div>
+      </div>)
+      }
 
 
             
@@ -392,6 +389,7 @@ class IndexPage extends React.Component {
       <SendMoney />
       <BookModal />
         </div>
+    
         )
     }
 }
