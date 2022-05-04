@@ -68,7 +68,7 @@ class SignUp extends React.Component {
             navigate('/verify')
         } else {
 
-            this.props.navigate('/')
+            // this.props.naviga?te('/')
             this.setState({
                 message: {
                     header: "Try again",
