@@ -11,6 +11,8 @@ import History from './pages/history/history.component';
 import Settings from './pages/settings/settings.component';
 import Login from './pages/login/login.component';
 import Introduction from './pages/introduction/introduction';
+import Verify from './pages/verify/verify';
+import Success from './pages/success/success';
 import $ from 'jquery'
 
 
@@ -19,6 +21,8 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Introduction />} />
+      <Route path='/verify' element={<Verify />} />
+      <Route path='/success' element={<Success />} />
       <Route path='/sign-up' element={<SignUp />} />
       <Route path='/index/:id' element={<IndexPage />} />
       <Route path='/wallet' element={<Wallet />} />

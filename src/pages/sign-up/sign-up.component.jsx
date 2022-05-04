@@ -11,6 +11,7 @@ import NotificationModal from '../../components/notification/notification'
 import { HandleNotification } from '../../utils/utils'
 import PreLoader from '../../components/pre-loader/pre-loader'
 import Logo from '../../assets/img/vtu-logo.png'
+import { setEmail } from '../../redux/actions/user.actions'
 
 
 
@@ -47,6 +48,7 @@ class SignUp extends React.Component {
     }
 
     handleSubmit = async event => {
+        const {navigate, dispatch} = this.props
         event.preventDefault()
         console.log(this.state)
         const data = {
@@ -62,7 +64,8 @@ class SignUp extends React.Component {
         const res = await signUp(data)
         console.log(res)
         if(res.data.message === 'Account Created Successfully'){
-            this.props.navigate('/login')
+            dispatch(setEmail(this.state.email_address))
+            navigate('/verify')
         } else {
 
             this.props.navigate('/')

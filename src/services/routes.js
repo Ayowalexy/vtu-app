@@ -16,7 +16,10 @@ const urls = {
     UPDATE_PROFILE: `${baseUrl}/user/update_profile.php`,
 
     //PASSWORD UPDATE
-    UPDATE_PASSWORD: `${baseUrl}/user/change_password.php`
+    UPDATE_PASSWORD: `${baseUrl}/user/change_password.php`,
+
+    //VERIFY_USER
+    GET_TOKEN: `${baseUrl}/user/verify_email.php`
 }
 
 export default urls

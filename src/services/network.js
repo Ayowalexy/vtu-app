@@ -92,11 +92,29 @@ const updatePassword =  async (data) => {
     }
 }
 
+const userToken = async (data) => {
+    const url = urls.GET_TOKEN
+    try {
+        const response = await axios.post(
+            url, 
+            JSON.stringify(data),
+            {
+                auth,
+                headers: {'Content-Type': 'application/json'},
+            }
+            )
+            return response
+    } catch (error){
+        return error
+    }
+}
+
 
 export {
     signUp,
     login,
     updateUserProfile,
     getuserProfile,
-    updatePassword
+    updatePassword,
+    userToken
 }
