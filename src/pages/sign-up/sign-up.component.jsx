@@ -63,7 +63,7 @@ class SignUp extends React.Component {
         this.setState({loading: true})
         const res = await signUp(data)
         console.log(res)
-        if(res.data.message === 'Account Created Successfully'){
+        if(res.data.flag){
             dispatch(setEmail(this.state.email_address))
             navigate('/verify')
         } else {
