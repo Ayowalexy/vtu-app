@@ -29,7 +29,7 @@ const Verify = () => {
         const res = await userToken(data)
         console.log(res)
         if(res.data.flag){
-            navigate('/login')
+            navigate('/success')
         } else {
             setMessage({
                 header: 'Sorry',
